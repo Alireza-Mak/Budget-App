@@ -1,0 +1,254 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta
+      name="description"
+      content="Budget Control is a perfect calculator web app to control your income and expenses, which helps you save money."
+    >
+    <!-- GOOGLE FONT -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600"
+      rel="stylesheet"
+      type="text/css"
+    >
+    <!-- /GOOGLE FONT/ -->
+
+    <!-- IONIC FONT -->
+    <link
+      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+      rel="stylesheet"
+      type="text/css"
+    >
+    <!-- IONIC FONT -->
+
+    <!-- FONT AWSOME -->
+    <script
+      src="https://kit.fontawesome.com/8606fdd5bc.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- /FONT AWSOME/ -->
+
+    <!-- FAV ICON -->
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./img/favicons/apple-touch-icon.png"
+    >
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./img/favicons/favicon-32x32.png"
+    >
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./img/favicons/favicon-16x16.png"
+    >
+    <link rel="manifest" href="./img/favicons/site.webmanifest" >
+    <link
+      rel="mask-icon"
+      href="./img/favicons/safari-pinned-tab.svg"
+      color="#5bbad5"
+    >
+    <link rel="shortcut icon" href="./img/favicons/favicon.ico" >
+    <meta name="msapplication-TileColor" content="#da532c" >
+    <meta
+      name="msapplication-config"
+      content="./img/favicons/browserconfig.xml"
+    >
+    <meta name="theme-color" content="#ffffff" >
+    <!-- /FAV ICON/ -->
+    <title>Budeget Calculator</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
+      integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
+      crossorigin="anonymous"
+    >
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="./css/bootstrap.css" >
+    <!-- /BOOTSTRAP/ -->
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/style.css" >
+    <!-- <link rel="stylesheet" href="./css/style1.css" /> -->
+    <!-- /CSS/ -->
+
+    <!-- JAVASCRIPT -->
+    <script src="./js/script.js" defer></script>
+    <!-- /JAVASCRIPT/ -->
+  </head>
+
+  <body>
+    <!-- START HERE -->
+    <!-- HEADER -->
+    <div id="header" class="py-4">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <div class="budget__title text-light pb-4">
+              Available Budget in
+              <div class="budget__title text-light pb-4 budget__title__month d-inline">%Month%</div>
+              :
+            </div>
+            <div
+              class="d-flex justify-content-center align-items-center row-hl"
+            >
+              <div class="item-hl text-light mr-3">
+                Please choose your currency:
+              </div>
+
+              <div class="item-hl mr-3">
+                <select
+                  class="form-control form-control-sm align-middle"
+                  id="currency"
+                >
+                  <option value="cad">$</option>
+                  <option value="eur">€</option>
+                  <option value="jpy">¥</option>
+                  <option value="gpb">£</option>
+                  <option value="krw">₩</option>
+                  <option value="INR">₹</option>
+                </select>
+              </div>
+              <div class="item-hl">
+                <button class="btn btn-success set__currency">
+                  Set Currecny
+                </button>
+              </div>
+            </div>
+
+            <div class="display-3 mb-4 text-light budget__value">
+              + 2,345.64
+            </div>
+          </div>
+        </div>
+        <div class="budget__income mb-3 row bg-info py-3">
+          <div class="col-sm-6 text-center">
+            <div class="header__font text-dark text-uppercase">Income</div>
+          </div>
+          <div class="col-sm-6 text-center">
+            <div class="header__font text-light budget__income--value">
+              + 4,300.00
+            </div>
+          </div>
+        </div>
+        <div class="budget__expenses row bg-danger mb-3 py-3">
+          <div class="col-sm-6 text-center">
+            <div class="header__font text-dark text-uppercase">Expenses</div>
+          </div>
+          <div class="col-sm-6 text-center">
+            <div
+              class="mr-3 text-light d-inline budget__expense--value header__font"
+            >
+              + 4,300.00
+            </div>
+            <div
+              class="text-light d-inline text-right font-weight-normal bg-warning rounded px-1 budget__expenses--percentage"
+            >
+              45%
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- HEADER -->
+
+    <!-- MAIN -->
+    <!-- OPERATOR -->
+    <div id="operator" class="py-5">
+      <div class="container operator__list">
+        <div class="row">
+          <div class="col-sm-3 align-self-center">
+            <select class="add__type">
+              <option value="inc" selected>+</option>
+              <option value="exp">-</option>
+            </select>
+          </div>
+          <div class="col-sm-3 align-self-center">
+            <input
+              type="text"
+              class="add__description"
+              placeholder="Add description"
+            >
+          </div>
+          <div class="col-sm-3 align-self-center">
+            <input type="number" class="add__value" placeholder="Value" >
+          </div>
+          <div class="col-sm-3 tc">
+            <button class="btn-lg text-info add__btn">
+              <i class="fa-regular fa-circle-check"></i>
+            </button>
+          </div>
+        </div>
+        <div></div>
+      </div>
+    </div>
+    <!-- /OPERATORS/ -->
+    <!-- DETAILS -->
+    <section id="details" class="py-5">
+      <div class="container">
+        <div class="row bubuling">
+          <div class="col-sm-6 border-right py-4">
+            <h3 class="text-info text-uppercase font-weight-normal">Income
+            </h3>
+            <div class="income__list">
+              <!-- INCOMES DETAILES -->
+          </div>
+          </div>
+
+          <div class="col-sm-6 border-left py-4">
+            <h3 class="text-danger text-uppercase font-weight-normal">
+              Expenses
+            </h3>
+            <div class="expense__list">
+              <!-- EXPENSES DETAILES -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /DETAILS/ -->
+    <!-- MAIN -->
+    <!-- FOOTER -->
+    <footer id="footer" class="fixed-bottom py-3 bg-info text-white">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center">
+            <div>Copy right &copy; <span id="year"> </span></div>
+            <div>
+              <a class="text-white" href="https://alirezamak.com">
+                Alireza Mak</a
+              >
+              | Front End Developer.
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- /FOOTER/ -->
+
+    <script
+      src="http://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
+      integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
