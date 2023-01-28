@@ -240,8 +240,8 @@ var UIController = (function () {
       if (type == 'exp') {
         element = document.querySelector(DOMstring.expenseContainer);
         html = `<div class="item d-flex row-hl p-0" id="exp-%id%">
-                    <div class="item__description item-hl flex-grow-1 py-3">%description%</div>
-                    <div class="item-hl py-3">
+                    <div class="item__description item-hl flex-grow-1 py-3 pl-4">%description%</div>
+                    <div class="item-hl py-3 pr-4">
                         <div class="d-flex row-hl text-danger">
                             <div class="item__value">%value%</div>
                             <div class="item__percentage">25%</div>
@@ -257,8 +257,8 @@ var UIController = (function () {
       } else if (type == 'inc') {
         element = document.querySelector(DOMstring.incomeContainer);
         html = `<div class="item d-flex row-hl p-0" id="inc-%id%">
-                    <div class="item__description item-hl flex-grow-1 py-3">%description%</div>
-                    <div class="item-hl py-3">
+                    <div class="item__description item-hl flex-grow-1 py-3 pl-4">%description%</div>
+                    <div class="item-hl py-3 pr-4">
                         <div class="d-flex row-hl text-info">
                             <div class="item__value">%value%</div>
                             <div class="item__delete">
